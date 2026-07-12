@@ -1,0 +1,28 @@
+name: Build Android APK
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Configuration de Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Rendre le script Gradle exécutable
+        run: chmod +x gradlew
+
+      - name: Compilation de l'APK avec Gradle
+        run: ./gradlew assembleDebug
+
+      - name: Sauvegarde de l'APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: mon-application-apk
+          path: app/build/outputs/apk/debug/app-debug.apk
+          
