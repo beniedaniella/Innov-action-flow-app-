@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Chemins autorisés pour le partage de fichiers (FileProvider).
+    Les exports CSV et PDF sont générés dans le cache de l'app
+    puis partagés via Intent.ACTION_SEND.
+-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <cache-path name="exports" path="." />
+    <external-cache-path name="exports_external" path="." />
+</paths>

@@ -1,0 +1,16 @@
+# ══════════════════════════════════════════════════════
+# local.properties.example — NE PAS COMMITTER ce fichier
+# Copiez ce fichier en local.properties et remplissez les valeurs
+# ══════════════════════════════════════════════════════
+
+# SDK Android (rempli automatiquement par Android Studio / Codespaces)
+sdk.dir=/path/to/android/sdk
+
+# ── Signature APK Release ──────────────────────────────
+# Générez le keystore une seule fois avec la commande :
+# keytool -genkey -v -keystore innovaction.jks \
+#   -alias innovaction -keyalg RSA -keysize 2048 -validity 10000
+KEYSTORE_PATH=innovaction.jks
+KEYSTORE_PASSWORD=votre_mot_de_passe_keystore
+KEY_ALIAS=innovaction
+KEY_PASSWORD=votre_mot_de_passe_cle
